@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="math" lang="ru">
+	<head>
+		<title>Math is fun. Only for kids</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon"  type="image/x-icon"  href="build/images/icons/calculator.ico">
+	  <meta name="description" content="Demo project" />
+	  <meta name="keywords" content="Lorem, ipsum, dolor, sit, amet, consectetur, adipisicing, elit, Perferendis, mollitia">
+	  <meta http-equiv="refresh" content="">
+		<meta name="author" content="v_glushkov">
+		<link rel="stylesheet" href="build/stylesheets/bootstrap.min.css">
+		<link rel="stylesheet" href="build/stylesheets/style.min.css">
+    <!--[if lt IE 9]>
+			<script>
+				alert("Ваш браузер не поддерживается! Обновите текущий браузер или используйте альтернативный!");
+				(function() {
+					window.location.assign("http://myblaze.ru/luchshie-brauzeryi-obzor-samyih-populyarnyih-i-byistryih-brauzerov/");
+				})();
+			</script>
+    <![endif]-->
+	</head>
+	<body>
+		<div class="container-fluid">
+			<section ng-controller="PanelController as panelCtrl">
+
+				<!-- Tabs навигации: "Проверка" и "Установка" -->
+
+				<ul class="nav nav-pills nav-justified">
+					<li ng-class="{ active: panelCtrl.isSelected(1) }">
+						<a href ng-click="panelCtrl.selectTab(1)">Проверка</a>
+					</li>
+					<li ng-class="{ active: panelCtrl.isSelected(2) }">
+						<a href ng-click="panelCtrl.selectTab(2)">Установка</a>
+					</li>
+				</ul>
+
+				<!-- Вид "Проверка" -->
+
+				<div ng-controller="QuizzController as quizzCtrl" class="panel" ng-show="panelCtrl.isSelected(1)">
+					<div ng-controller="GeneratorController as generatorCtrl" class="container" id="quizz-container">
+						<form ng-submit="generatorCtrl.generateExampleRandom() && quizzCtrl.checkIsReady()" role="form" name="isReadyForm" id="start-new-exercise">
+							<button type="submit" class="btn btn-default btn-lg btn-success" id="start-new-exercise-btn">Начать новое упражнение</button>
+						</form>
+						<div class="panel panel-default well" id="question-panel">
+							<div class="panel-body" id="question-panel-body">{{ question }}</div>
+						</div>
+						<form ng-submit="quizzForm.$valid && quizzCtrl.checkTheAnswer() && generatorCtrl.generateExampleRandom() && quizzCtrl.getNextExample()" role="form" name="quizzForm" novalidate id="answer-form">
+							<div class="input-group" id="answer-container">
+								<span class="input-group-addon" id="basic-addon2">Твой ответ:</span>
+								<input ng-model="quizzCtrl.answer" class="form-control input-lg" id="focusedInput" type="number" name="quantity" aria-describedby="basic-addon2" required disabled autofocus>
+							</div>
+							<button type="submit" class="btn btn-default btn-lg btn-success" id="answer-check-btn">Проверить</button>
+						</form>
+						<div class="panel panel-default well" id="results-panel">
+							<div class="panel-heading" id="your-result-panel-heading">Твой результат:</div>
+							<div class="panel-body"><span class="label label-success" id="correct-answers-label">Правильных ответов: {{ correctAnswerCounter }}</span><span class="label label-warning" id="wrong-answers-label">Неправильных ответов: {{ wrongAnswerCounter }}</span></div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Вид "Установка" -->
+				
+				<div ng-controller="SettingsController as settingsCtrl" ng-show="panelCtrl.isSelected(2)" class="panel" id="settings-panel">
+					<form role="form" ng-submit="settingsCtrl.addMathOperation()" name="settingsForm">
+						<fieldset>
+							<legend>Выбери арифметические действия для упражнения:</legend>
+							<div class="checkbox">
+								<label><input ng-model="settingsCtrl.isAddition" type="checkbox" name="addition">Сложение</label>
+							</div>
+							<div class="checkbox">
+								<label><input ng-model="settingsCtrl.isSubtraction" type="checkbox" name="subtraction">Вычитание</label>
+							</div>
+							<div class="checkbox">
+								<label><input ng-model="settingsCtrl.isMultiplication" type="checkbox" name="multiplication">Умножение</label>
+							</div>
+							<div class="checkbox">
+								<label id="division-examples-label"><input ng-model="settingsCtrl.isDivision" type="checkbox" name="division">Деление</label>
+							</div>
+							<button ng-click="panelCtrl.selectTab(1)" type="submit" class="btn btn-default btn-lg btn-success">Применить</button>
+						</fieldset>
+					</form>
+				</div>
+			</section>
+		</div>
+	</body>
+	<script src="build/javascript/angular.min.js"></script>
+	<script src="build/javascript/jquery-1.12.3.min.js"></script>
+	<script src="build/javascript/bootstrap.min.js"></script>
+	<script src="build/javascript/lodash.min.js"></script>
+	<script src="build/javascript/app.min.js"></script>
+</html>

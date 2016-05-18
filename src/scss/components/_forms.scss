@@ -1,0 +1,61 @@
+.ng-valid.ng-dirty {
+	border-color: $c-ng-valid_ng-dirty;
+}
+
+#start-new-exercise {
+	margin-bottom: 21px;
+}
+
+@media (device-width: 1280px) and (device-height: 1024px) {
+	#start-new-exercise {
+		margin-bottom: 15px;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#start-new-exercise {
+		margin-bottom: 32px;
+	}
+}
+
+@media (device-width: 1280px) and (device-height: 800px) {
+	#answer-form {
+		margin-bottom: 11px;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#basic-addon2 {
+		font-size: $fs-basic-addon2-id;
+	}
+}
+
+#focusedInput {
+	margin-bottom: 0;
+}
+
+legend {
+    border-bottom: 0;
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	legend {
+		font-size: $fs-legend;
+	}
+}
+
+.checkbox label {
+	margin-bottom: 13px;
+}
+
+#division-examples-label {
+	margin-bottom: 30px;
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	.checkbox label {
+		margin-bottom: 25px;
+		
+		font-size: $fs-checkbox__label;
+	}
+}

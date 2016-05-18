@@ -1,0 +1,81 @@
+#question-panel {
+    height: 30px;
+    line-height: $lh-question-panel-id;
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#question-panel {
+    	height: 40px;
+	}
+}
+
+#question-panel-body {
+    height: auto;
+    
+    font-family: $ff-question-panel-body-id;
+    font-size: $fs-question-panel-body-id;
+    font-weight: $fw-question-panel-body-id;
+    font-style: $fst-question-panel-body-id;
+    text-align: $ta-question-panel-body-id;
+    line-height: $lh-question-panel-body-id;
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#question-panel-body {
+    	font-size: $fs-question-panel-body-id-768;
+    	line-height: $lh-question-panel-body-id-768;
+	}
+}
+
+#results-panel {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#results-panel {
+    	font-size: $fs-results-panel-id-768;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#correct-answers-label, #wrong-answers-label {
+		font-size: $fs-both-answers-label-id-768;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#your-result-panel-heading {
+		margin-bottom: 10px;
+	}
+}
+
+#settings-panel {
+    width: 520px;
+    margin: 0 auto;
+}
+
+@media (device-width: 1024px) and (device-height: 768px) {
+	#settings-panel {
+    	margin-left: 300px;
+	}
+}
+
+@media (device-width: 800px) and (device-height: 600px) {
+	#settings-panel {
+    	margin-left: 175px;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	#settings-panel {
+		width: 620px;
+	}
+}
+
+@media (max-width: 320px) {
+	#settings-panel {
+		width: 280px;
+		margin-top: 130px;
+	}
+}

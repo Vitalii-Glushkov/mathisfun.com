@@ -1,0 +1,45 @@
+.container {
+	width: 30%;
+}
+
+@media (device-width: 1280px) and (device-height: 1024px) {
+	.container {
+		width: 34%;
+	}
+}
+
+@media (device-width: 1280px) and (device-height: 800px) {
+	.container {
+		width: 37%;
+	}
+}
+
+@media (device-width: 1024px) and (device-height: 768px) {
+	.container {
+    	width: 42%;
+	}
+}
+
+@media (device-width: 800px) and (device-height: 600px) {
+	.container {
+    	width: 55%;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	.container {
+		width: 70%;
+	}
+}
+
+@media (max-width: 320px) {
+	.container {
+		width: 100%;
+	}
+}
+
+@media (device-width: 800px) and (device-height: 600px) {
+	#quizz-container {
+		margin-left: 200px;
+	}
+}

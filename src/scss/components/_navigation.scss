@@ -1,0 +1,47 @@
+.nav {
+	margin-bottom: 10%;
+}
+
+@media (device-width: 1366px) and (device-height: 768px) {
+	.nav {
+		margin-bottom: 100px;
+	}
+}
+
+@media (device-width: 1280px) and (device-height: 1024px) {
+	.nav {
+		margin-bottom: 290px;
+	}
+}
+
+@media (device-width: 1280px) and (device-height: 800px) {
+	.nav {
+		margin-bottom: 180px;
+	}
+}
+
+@media (device-width: 1024px) and (device-height: 768px) {
+	.nav {
+		margin-bottom: 200px;
+	}
+}
+
+@media (device-width: 800px) and (device-height: 600px) {
+	.nav {
+		margin-bottom: 150px;
+	}
+}
+
+@media (device-width: 768px) and (device-height: 1024px) {
+	.nav {
+		margin-bottom: 280px;
+
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 320px) {
+	.nav {
+		margin-bottom: 60px;
+	}
+}
